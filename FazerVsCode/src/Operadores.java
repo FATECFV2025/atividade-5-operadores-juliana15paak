@@ -15,6 +15,41 @@ public class Operadores {
     return v1 / v2;
   }
 
+  // Escolha
+  public void resultado (int escolha){
+    if (escolha >= 1 && escolha <= 4){
+      System.out.println("Digite o primeiro termo: ");
+      float v1 = in.nextFloat();
+      System.out.println("Digite o segundo termo: ");
+      float v2 = in.nextFloat();
+
+      if (escolha == 1){
+        System.out.println("Adição: "+adicao(v1, v2));
+      }
+      if (escolha == 2){
+        System.out.println("Subtração: "+subtracao(v1, v2));
+      }
+      if (escolha == 3){
+        System.out.println("Multiplicação: "+multiplicacao(v1, v2));
+      }
+      if (escolha == 4){
+        System.out.println("Divisão: "+divisao(v1, v2));
+      }
+    }
+    else if (escolha == 5){
+      expressao();
+    }
+    else if (escolha == 6){
+      demonstrarComparacao();
+    }
+    else if (escolha == 7){
+      demonstrarLogicos();
+    }
+    else if (escolha < 1 || escolha > 7){
+      System.out.println("Opção inválida!");
+    }
+  }
+
   //Operadores de Atribuição
   //A conta será realizada na ordem que o usuário digitou
   public void expressao (){
