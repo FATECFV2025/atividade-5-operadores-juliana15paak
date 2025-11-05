@@ -1,19 +1,28 @@
+package calculadora;
+
 import java.util.Scanner;
 
 public class Calculadora {
     public static void main (String [] args)throws Exception {
         Scanner in = new Scanner(System.in);
-
         Operadores op = new Operadores();
 
-        //Entrada de dados pelo usuário
-        System.out.println("Digite dois números: ");
-        float v1 = in.nextFloat();
-        float v2 = in.nextFloat();
-
-        System.out.println("Adição: "+op.adicao(v1, v2));
-        System.out.println("Subtração: "+op.subtracao(v1, v2));
-        System.out.println("Multiplicação: "+op.multiplicacao(v1, v2));
-        System.out.println("Divisão: "+op.divisao(v1, v2));
+        //Menu de opções 
+        System.out.println("--- Calculadora ---");
+        System.out.println("1: Soma");
+        System.out.println("2: Subtração");
+        System.out.println("3: Multiplicação");
+        System.out.println("4: Divisão");
+        System.out.println("5: Expressão (Operadores de Atribuição)");
+        System.out.println("6: Testar Operadores de Comparação");
+        System.out.println("7: Testar Operadores Lógicos");
+        System.out.println("---------------------------------");
+        System.out.print("Digite sua escolha: ");
+        
+        int escolha = in.nextInt();
+        
+        op.resultado(escolha);
+        
+        in.close();
     }
 }
