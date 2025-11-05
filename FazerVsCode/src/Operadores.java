@@ -86,4 +86,21 @@ public class Operadores {
     
     System.out.println("Resultado da expressão: "+ resultado);
   }
+
+  //Operadores de Comparação
+  public void demonstrarComparacao() {
+    System.out.println("--- Operadores de Comparação ---");
+    System.out.print("Digite o primeiro número: ");
+    float v1 = in.nextFloat();
+    System.out.print("Digite o segundo número: ");
+    float v2 = in.nextFloat();
+
+    // Mostra o resultado (true ou false) de cada comparação
+    System.out.println(v1 + " == " + v2 + " (Igual a): " + (v1 == v2));
+    System.out.println(v1 + " != " + v2 + " (Diferente de): " + (v1 != v2));
+    System.out.println(v1 + " > " + v2 + "  (Maior que): " + (v1 > v2));
+    System.out.println(v1 + " < " + v2 + "  (Menor que): " + (v1 < v2));
+    System.out.println(v1 + " >= " + v2 + " (Maior ou igual): " + (v1 >= v2));
+    System.out.println(v1 + " <= " + v2 + " (Menor ou igual): " + (v1 <= v2));
+  }
 }
