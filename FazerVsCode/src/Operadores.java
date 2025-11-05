@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Operadores {
   Scanner in = new Scanner(System.in);
+
   public float adicao (float v1, float v2) {
     return v1 + v2;
   }
@@ -15,15 +16,16 @@ public class Operadores {
     return v1 / v2;
   }
 
-  // Escolha
+  // --- Controlador Principal ---
+  //COMPARAÇÃO e LÓGICO 
   public void resultado (int escolha){
-    if (escolha >= 1 && escolha <= 4){
+    if (escolha >= 1 && escolha <= 4){ 
       System.out.println("Digite o primeiro termo: ");
       float v1 = in.nextFloat();
       System.out.println("Digite o segundo termo: ");
       float v2 = in.nextFloat();
-
-      if (escolha == 1){
+      
+      if (escolha == 1){ // COMPARAÇÃO (==)
         System.out.println("Adição: "+adicao(v1, v2));
       }
       if (escolha == 2){
@@ -36,47 +38,47 @@ public class Operadores {
         System.out.println("Divisão: "+divisao(v1, v2));
       }
     }
+    // 
     else if (escolha == 5){
       expressao();
     }
-    else if (escolha == 6){
-      demonstrarComparacao();
-    }
-    else if (escolha == 7){
-      demonstrarLogicos();
-    }
-    else if (escolha < 1 || escolha > 7){
+    // COMPARAÇÃO (<, >) e LÓGICO (||)
+    else if (escolha < 1 || escolha > 5){
       System.out.println("Opção inválida!");
     }
   }
 
-  //Operadores de Atribuição
-  //A conta será realizada na ordem que o usuário digitou
+  // ATRIBUIÇÃO
   public void expressao (){
-    System.out.print("Digite um número, uma operação (+, -, *, /) e outro número, dando Enter entre cada um. Continue digitando sua expressão, para parar, digite '=': ");
-    float resultado = in.nextFloat();
+    System.out.println("--- Expressão com Atribuição ---");
+    System.out.println("Digite o primeiro número: ");
+    float resultado = in.nextFloat(); 
+
     while (true) {
-        String o = in.next();
+        System.out.println("Subtotal: " + resultado);
+        System.out.print("Digite um operador (+, -, *, /) ou '=' para finalizar: ");
+        String o = in.next(); // Lê a operação
+        
         if (o.equals("=")) {
             break; // Sai do loop
         }
+        System.out.print("Digite o próximo número: ");
         float v = in.nextFloat();
 
-        // Verificação de operadores
         if (o.equals("+")){
-            resultado += v; // Operador de atribuição (adição)
+            resultado += v; //ATRIBUIÇÃO 
         }
         else if (o.equals("-")){
-            resultado -= v; // Operador de atribuição (subtração)
+            resultado -= v;
         }
         else if (o.equals("*")){
-            resultado *= v; // Operador de atribuição (multiplicação)
+            resultado *= v; 
         }
         else if (o.equals("/")){
             if (v == 0) {
                 System.out.println("Erro: Divisão por zero. Operação ignorada.");
             } else {
-                resultado /= v; // Operador de atribuição (divisão)
+                resultado /= v; 
             }
         }
         else {
@@ -84,23 +86,6 @@ public class Operadores {
         }
     }
     
-    System.out.println("Resultado da expressão: "+ resultado);
-  }
-
-  //Operadores de Comparação
-  public void demonstrarComparacao() {
-    System.out.println("--- Operadores de Comparação ---");
-    System.out.print("Digite o primeiro número: ");
-    float v1 = in.nextFloat();
-    System.out.print("Digite o segundo número: ");
-    float v2 = in.nextFloat();
-
-    // Mostra o resultado (true ou false) de cada comparação
-    System.out.println(v1 + " == " + v2 + " (Igual a): " + (v1 == v2));
-    System.out.println(v1 + " != " + v2 + " (Diferente de): " + (v1 != v2));
-    System.out.println(v1 + " > " + v2 + "  (Maior que): " + (v1 > v2));
-    System.out.println(v1 + " < " + v2 + "  (Menor que): " + (v1 < v2));
-    System.out.println(v1 + " >= " + v2 + " (Maior ou igual): " + (v1 >= v2));
-    System.out.println(v1 + " <= " + v2 + " (Menor ou igual): " + (v1 <= v2));
+    System.out.println("--- Resultado Final da Expressão: "+ resultado + " ---");
   }
 }

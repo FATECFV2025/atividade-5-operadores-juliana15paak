@@ -14,8 +14,6 @@ public class Calculadora {
         System.out.println("3: Multiplicação");
         System.out.println("4: Divisão");
         System.out.println("5: Expressão (Operadores de Atribuição)");
-        System.out.println("6: Testar Operadores de Comparação");
-        System.out.println("7: Testar Operadores Lógicos");
         System.out.println("---------------------------------");
         System.out.print("Digite sua escolha: ");
         
